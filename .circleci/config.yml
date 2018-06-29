@@ -147,8 +147,6 @@ jobs:
   py36-dj20-sqlite-cms36:
     <<: *py36default
 
-#######################
-
 workflows:
   version: 2
   build:
