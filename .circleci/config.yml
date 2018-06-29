@@ -129,7 +129,16 @@ jobs:
   isort:
     <<: *py35default
   eslint:
-    <<: *py35default
+    docker:
+      - image: circleci/python:3.5
+    steps:
+     - setup_remote_docker:
+         docker_layer_caching: true
+     - checkout
+     - restore_cache:
+         keys: py35-
+     - run: docker load -i caches/py35.tar || true
+     - run: docker run py35 gulp lint
   py27-dj111-sqlite-cms35:
     <<: *py27default
   py34-dj111-sqlite-cms35:
