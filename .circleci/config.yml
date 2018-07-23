@@ -160,10 +160,7 @@ workflows:
   version: 2
   build:
     jobs:
-      - py27_base
-      - py34_base
       - py35_base
-      - py36_base
       - flake8:
           requires:
             - py35_base
@@ -173,27 +170,6 @@ workflows:
       - eslint:
           requires:
             - py35_base
-      - py27-dj111-sqlite-cms35:
-          requires:
-            - py27_base
-      - py34-dj111-sqlite-cms35:
-          requires:
-            - py34_base
       - py35-dj111-sqlite-cms35:
           requires:
             - py35_base
-      - py36-dj111-sqlite-cms35:
-          requires:
-            - py36_base
-      - py36-dj111-sqlite-cms36:
-          requires:
-            - py36_base
-      - py34-dj20-sqlite-cms36:
-          requires:
-            - py34_base
-      - py35-dj20-sqlite-cms36:
-          requires:
-            - py35_base
-      - py36-dj20-sqlite-cms36:
-          requires:
-            - py36_base
