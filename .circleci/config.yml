@@ -161,15 +161,6 @@ workflows:
   build:
     jobs:
       - py35_base
-      - flake8:
-          requires:
-            - py35_base
-      - isort:
-          requires:
-            - py35_base
-      - eslint:
-          requires:
-            - py35_base
       - py35-dj111-sqlite-cms35:
           requires:
             - py35_base
